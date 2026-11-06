@@ -1,0 +1,32 @@
+{
+  "name": "deovr-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E2E test of DeoVR: search a video, open it, play, pause and resume",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:all": "playwright test --project='*'",
+    "test:desktop": "playwright test --project=desktop-chrome --project=desktop-safari",
+    "test:mobile": "playwright test --project=mobile-chrome --project=mobile-safari",
+    "test:headed": "playwright test --headed",
+    "test:video": "QA_VIDEO=1 playwright test",
+    "test:stability": "playwright test --project='*' --repeat-each=5",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "report:allure": "allure generate allure-results --clean",
+    "report:allure:open": "allure open allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.18.0",
+    "allure": "3.33.0",
+    "allure-js-commons": "3.14.0",
+    "allure-playwright": "3.14.0",
+    "typescript": "5.9.3",
+    "zod": "4.6.7"
+  }
+}
